@@ -65,6 +65,7 @@ public:
 		int front_data = temp->data;
 		head = head->next;
 		delete temp;
+		n--;
 		return front_data;
 	}
 
@@ -81,9 +82,13 @@ int main() {
 	linkedList testList;
 
 	testList.push_back(3);
+	testList.push_front(1);
+	testList.push_front(4);
+	testList.push_back(5);
 	testList.push_back(3);
-	testList.push_back(3);
-	testList.push_back(3);
+	cout << testList.pop_front() << '\n';
+	cout << testList.front() << '\n';
+	cout << testList.back() << '\n';
 	cout << testList.size() << '\n';
 	return 0;
 }
